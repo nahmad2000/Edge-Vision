@@ -54,8 +54,8 @@ Follow these steps only if you want to run the code on your own machine. If you 
 
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/nahmad2000/Edge-Vision.git](https://github.com/nahmad2000/Edge-Vision.git) 
-   cd Edge-Vision # Corrected directory name
+   git clone https://github.com/nahmad2000/Edge-Vision.git
+   cd Edge-Vision
    ```
 
 2. Create a virtual environment (optional but recommended):
