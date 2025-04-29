@@ -2,7 +2,9 @@
 
 A visual tool that applies multiple edge detection algorithms (Sobel, Laplacian, Canny, Scharr) to images and displays them side-by-side for easy comparison. Edge Vision enables users to adjust algorithm parameters through a simple interface and see the effects in real-time, making it ideal for computer vision learning and algorithm evaluation.
 
-![Edge Vision Demo](https://raw.githubusercontent.com/nahmad2000/edge-vision/main/images/demo.png)
+![Edge Vision Demo 1](images/demo1.png)
+
+![Edge Vision Demo 2](images/demo2.png)
 
 ## Features
 
@@ -111,14 +113,4 @@ edge-vision/
 3. For **noisy images**, lower thresholds may produce excessive edges.
 4. The **Sobel and Scharr operators** are direction-sensitive; try changing dx/dy values.
 5. **Laplacian** works best on images with sharp transitions.
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
 
