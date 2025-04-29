@@ -1,9 +1,10 @@
 # Edge Vision: Visual Edge Detection Comparator
 
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://edge-vision-nahmad.streamlit.app/)
+
 A visual tool that applies multiple edge detection algorithms (Sobel, Laplacian, Canny, Scharr) to images and displays them side-by-side for easy comparison. Edge Vision enables users to adjust algorithm parameters through a simple interface and see the effects in real-time, making it ideal for computer vision learning and algorithm evaluation.
 
-![Edge Vision Demo 1](images/demo1.png)
-
+![Edge Vision Demo 1](images/demo1.png) 
 ![Edge Vision Demo 2](images/demo2.png)
 
 ## Features
@@ -15,14 +16,34 @@ A visual tool that applies multiple edge detection algorithms (Sobel, Laplacian,
 - Performance notes for each detector
 - Simple, intuitive Streamlit interface
 
-## Edge Detection Algorithms
+## Usage
 
-1. **Sobel Operator**: Calculates the gradient of image intensity at each pixel, emphasizing regions of high spatial frequency.
-2. **Scharr Operator**: A more accurate gradient calculation than Sobel with better rotation invariance.
-3. **Laplacian Operator**: Uses the Laplacian filter to find areas of rapid intensity change.
-4. **Canny Edge Detector**: Multi-stage algorithm that detects edges while suppressing noise.
+### Live Demo (Recommended)
 
-## Installation
+You can use the deployed application directly in your browser without any installation:
+
+**➡️ [https://edge-vision-nahmad.streamlit.app/](https://edge-vision-nahmad.streamlit.app/)**
+
+Simply open the link and use the sidebar to:
+- Select or upload an image
+- Choose which edge detectors to apply
+- Adjust parameters for each detector
+- Toggle performance notes display
+
+### Local Usage
+
+If you want to run the application on your own machine (e.g., for development or offline use):
+
+1.  **(Prerequisite)** Follow the Installation steps below.
+2.  Start the application from your terminal within the cloned project directory:
+    ```bash
+    streamlit run main.py
+    ```
+3.  Access the web interface in your browser (typically http://localhost:8501).
+
+## Installation (for Local Usage Only)
+
+Follow these steps only if you want to run the code on your own machine. If you just want to use the tool, use the Live Demo link above.
 
 ### Prerequisites
 
@@ -33,8 +54,8 @@ A visual tool that applies multiple edge detection algorithms (Sobel, Laplacian,
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/nahmad2000/edge-vision.git
-   cd edge-vision
+   git clone [https://github.com/nahmad2000/Edge-Vision.git](https://github.com/nahmad2000/Edge-Vision.git) 
+   cd Edge-Vision # Corrected directory name
    ```
 
 2. Create a virtual environment (optional but recommended):
@@ -47,27 +68,21 @@ A visual tool that applies multiple edge detection algorithms (Sobel, Laplacian,
    ```bash
    pip install -r requirements.txt
    ```
+   *(Note: For deployment on Linux servers like Streamlit Cloud, system dependencies listed in `packages.txt` might also be needed).*
 
-4. Create an images directory and add a sample image:
+4. Ensure you have an images directory (if using the default image option):
    ```bash
    mkdir -p images
-   # Add your sample.jpg to the images directory
+   # Add your sample image (e.g., sample.jpg or demo1.png) to the images directory
+   # Make sure the path matches the DEFAULT_IMAGE variable in main.py
    ```
 
-## Usage
+## Edge Detection Algorithms
 
-1. Start the application:
-   ```bash
-   streamlit run main.py
-   ```
-
-2. Access the web interface in your browser (typically http://localhost:8501).
-
-3. Use the sidebar to:
-   - Select or upload an image
-   - Choose which edge detectors to apply
-   - Adjust parameters for each detector
-   - Toggle performance notes display
+1.  **Sobel Operator**: Calculates the gradient of image intensity at each pixel, emphasizing regions of high spatial frequency.
+2.  **Scharr Operator**: A more accurate gradient calculation than Sobel with better rotation invariance.
+3.  **Laplacian Operator**: Uses the Laplacian filter to find areas of rapid intensity change.
+4.  **Canny Edge Detector**: Multi-stage algorithm that detects edges while suppressing noise.
 
 ## Parameter Explanations
 
@@ -96,21 +111,21 @@ A visual tool that applies multiple edge detection algorithms (Sobel, Laplacian,
 ## Repository Structure
 
 ```
-edge-vision/
-├── images/                  # Sample images for testing
-│   └── sample.jpg           # Example image
-├── main.py                  # Entry point and UI
-├── edge_detectors.py        # Core detection algorithms
-├── utils.py                 # Helper functions
-├── requirements.txt         # Dependencies
-└── README.md                # Project documentation
+Edge-Vision/
+├── images/              # Sample images for testing (ensure default image exists here)
+│   └── ...
+├── main.py              # Entry point and UI
+├── edge_detectors.py    # Core detection algorithms
+├── utils.py             # Helper functions
+├── requirements.txt     # Python dependencies for pip
+├── packages.txt         # System dependencies for apt-get (used by Streamlit Cloud)
+└── README.md            # Project documentation
 ```
 
 ## Tips for Best Results
 
-1. **Start with default parameters** and adjust incrementally.
-2. **Canny detector** generally produces cleaner edges but requires more tuning.
-3. For **noisy images**, lower thresholds may produce excessive edges.
-4. The **Sobel and Scharr operators** are direction-sensitive; try changing dx/dy values.
-5. **Laplacian** works best on images with sharp transitions.
-
+1.  **Start with default parameters** and adjust incrementally.
+2.  **Canny detector** generally produces cleaner edges but requires more tuning.
+3.  For **noisy images**, lower thresholds may produce excessive edges.
+4.  The **Sobel and Scharr operators** are direction-sensitive; try changing dx/dy values.
+5.  **Laplacian** works best on images with sharp transitions.
